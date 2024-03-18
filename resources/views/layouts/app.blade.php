@@ -2,9 +2,11 @@
 {{-- Extend and customize the browser title --}}
 
 @section('title')
-    {{ config('admin.title') }}
+    {{ config('adminlte.title') }}
     @hasSection('subtitle') | @yield('subtitle') @endif
 @stop
+
+@vite('resources/js/app.js')
 
 {{-- Extend and customize the page content header --}}
 
@@ -46,17 +48,15 @@
 {{-- Add common Javascript/jquery code --}}
 
 @push('js')
-    <script>
-
-        $(document).ready(function(){
-            //add your common script logic here...
-        });
-    </script>
+<script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
 @endpush
+
+@stack('scripts')
 
 {{-- Add common CSS customizations --}}
 
 @push('css')
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css">
     <style type="text/css">
         /* You can add AdminLTE customizations here */
 
