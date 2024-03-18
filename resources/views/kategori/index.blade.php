@@ -13,6 +13,11 @@
             <div class="card-body">
                 {{ $dataTable->table() }}
             </div>
+            <div class="kategoriCreate" style="padding-bottom: 10px; padding-left: 10px">
+                <a href="{{ url('/kategori/create')}}">
+                    <button type="submit" class="btn btn-primary">Tambah Kategori</button>
+                </a>
+            </div>
         </div>
     </div>
 @endsection
