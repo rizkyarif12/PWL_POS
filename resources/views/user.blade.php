@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Data User</title>
@@ -29,4 +29,43 @@
         @endforeach
     </table>
 </body>
-</html>
+</html> --}}
+@extends('layouts.app')
+
+{{-- Customize layout sections --}}
+
+@section('subtitle', 'User')
+@section('content_header_title', 'Home')
+@section('content_header_subtitle', 'User')
+
+@section('content')
+<form>
+    <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label>Nama</label>
+        <input type="text" class="form-control" placeholder="Nama">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" class="form-control" placeholder="Password">
+    </div>
+    <div class="col-sm-6">
+        <!-- select -->
+        <div class="form-group">
+        <label>Level ID</label>
+            <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+@endsection
+    

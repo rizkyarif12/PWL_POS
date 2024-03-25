@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Data Level Pengguna</title>
@@ -20,4 +20,26 @@
         @endforeach
     </table>
 </body>
-</html>
+</html> --}}
+
+@extends('layouts.app')
+
+{{-- Customize layout sections --}}
+
+@section('subtitle', 'User')
+@section('content_header_title', 'Home')
+@section('content_header_subtitle', 'User')
+
+@section('content')
+<form>
+    <div class="form-group">
+        <label>Kode Level</label>
+        <input type="text" class="form-control" placeholder="Username">
+    </div>
+    <div class="form-group">
+        <label>Nama Level</label>
+        <input type="text" class="form-control" placeholder="Nama">
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+@endsection
