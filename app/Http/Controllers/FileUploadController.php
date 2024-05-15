@@ -6,12 +6,12 @@ use Illuminate\Http\Request;
 
 class FileUploadController extends Controller
 {
-    public function fileUpload(){
+    public function fileUploadRename(){
         return view('file-upload');
     }
 
 
-    public function prosesFileUpload(Request $request){
+    public function prosesFileUploadRename(Request $request){
         // return "Pemrosesan file upload di sini";
         // dump($request->berkas);
         // dump($request->hasFile('berkas'));

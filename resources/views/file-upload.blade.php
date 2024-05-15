@@ -15,7 +15,7 @@
         <h2>File Upload</h2>
         <hr>
 
-        <form action="{{ url('/file-upload') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ url('/file-upload-rename') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
