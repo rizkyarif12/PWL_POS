@@ -68,13 +68,19 @@ class BarangController extends Controller
             'kategori_id' => 'required|integer',
             'harga_beli' => 'required|integer',
             'harga_jual' => 'required|integer',
+            'image' => 'required|file|image|max:500'
         ]);
+
+        $HashedFoto =$request->image->store('public/barang');
+        $path = str_replace('public', 'storage', $HashedFoto);
+
         m_barang::create([
             'barang_kode' => $request->barang_kode,
             'barang_nama' => $request->barang_nama,
             'kategori_id' => $request->kategori_id,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
+            'image' => isset($HashedFoto) ? $path :null,
         ]);
 
         return redirect('/barang')->with('success', 'Data barang berhasil disimpan');
@@ -120,7 +126,11 @@ class BarangController extends Controller
             'kategori_id' => 'required|integer',
             'harga_beli' => 'required|integer',
             'harga_jual' => 'required|integer',
+            'image' => 'required|file|image|max:500'
         ]);
+
+        $HashedFoto =$request->image->store('public/barang');
+        $path = str_replace('public', 'storage', $HashedFoto);
 
         m_barang::find($id)->update([
             'barang_kode' => $request->barang_kode,
@@ -128,6 +138,7 @@ class BarangController extends Controller
             'kategori_id' => $request->kategori_id,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
+            'image' => isset($HashedFoto) ? $path :null,
         ]);
 
         return redirect('/barang')->with('success', 'Data barang berhasil diubah');
